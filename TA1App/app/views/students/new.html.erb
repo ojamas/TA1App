@@ -1,0 +1,1657 @@
+<h1>TA and Grader Application</h1>
+
+<%= form_tag do %>
+	<h3>Student Name: <%= text_field_tag(:student_name) %></h3>
+	<h3>Student ID: <%= text_field_tag(:student_id) %></h3>
+	<h3>Class Year:</h3>
+	<%= radio_button_tag(:class_year_id, 2016) %> 2016
+	<br>
+	<%= radio_button_tag(:class_year_id, 2017) %> 2017
+	<br>
+	<%= radio_button_tag(:class_year_id, 2018) %> 2018
+	<br>
+	<%= radio_button_tag(:class_year_id, 2019) %> 2019
+	<br>
+	<br>
+	<p>Major: <%= text_field_tag(:major) %></p>
+	<p>Minor: <%= text_field_tag(:minor) %></p>
+
+	<h3>What is the maximum number of hours you'd be willing to work?</h3>
+	<table style="text-align: left; width: 300px;" border="1">
+	<tbody>
+		<tr>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td><%= radio_button_tag(:hours, '2') %></td>
+			<td><%= radio_button_tag(:hours, '3') %></td>
+			<td><%= radio_button_tag(:hours, '4') %></td>
+			<td><%= radio_button_tag(:hours, '5') %></td>
+			<td><%= radio_button_tag(:hours, '6') %></td>
+		</tr>
+	</tbody>
+	</table>
+
+<br>
+<br>
+
+<h3>Are you QR certified?</h3>
+<td style="vertical-align: center;">
+<%= radio_button_tag(:qr, 'Yes') %>Yes
+<br>
+<%= radio_button_tag(:qr, 'No') %>No
+</td>
+
+<br>
+<br>
+<br>
+
+<table style="text-align: left; width: 1000px;" border="1" cellpadding="2" cellspacing="10">
+<tbody>
+<tr>
+<td style="vertical-align: center; font-weight: bold;"><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">No
+Experience</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Beginner</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Proficient</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Advanced</span><br>
+</td>
+<td style="vertical-align: center; font-weight: bold;">Willing to TA for this Language<br>
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Java</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:java_proficiency, 'No Experience') %>
+	<!-- <input name="javaInput" value="noExperience" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:java_proficiency, 'Beginner') %>
+	<!-- <input name="javaInput" value="beginner" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:java_proficiency, 'Proficient') %>
+	<!-- <input name="javaInput" value="proficient" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:java_proficiency, 'Advanced') %>
+	<!-- <input name="javaInput" value="advanced" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:java_wttl, 'willing to ta lang') %>
+	<!-- <input name="javaInput" value="willingToLangTA" type="checkbox"> -->
+</td>
+</tr>
+
+<tr>
+	<td style="vertical-align: center;"><span
+	style="font-weight: bold;">Python</span><br>
+	</td>
+	<td style="vertical-align: center;">
+		<%= radio_button_tag(:python_proficiency, 'No Experience') %>
+		<!-- <input name="pythonInput" value="noExperience" type="checkbox"> -->
+	</td>
+	<td style="vertical-align: center;">
+		<%= radio_button_tag(:python_proficiency, 'Beginner') %>
+		<!-- <input name="pythonInput" value="beginner" type="checkbox"> -->
+	</td>
+	<td style="vertical-align: center;">
+		<%= radio_button_tag(:python_proficiency, 'Proficient') %>
+		<!-- <input name="pythonInput" value="proficient" type="checkbox"> -->
+	</td>
+	<td style="vertical-align: center;">
+		<%= radio_button_tag(:python_proficiency, 'Advanced') %>
+		<!-- <input name="pythonInput" value="advanced" type="checkbox"> -->
+	</td>
+	<td style="vertical-align: center;">
+		<%= check_box_tag(:python_wttl, 'willing to ta lang') %>
+		<!-- <input name="pythonInput" value="willingToLangTA" type="checkbox"> -->
+	</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">C</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:c_proficiency, 'No Experience') %>
+	<!-- <input name="javaInput" value="noExperience" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:c_proficiency, 'Beginner') %>
+	<!-- <input name="javaInput" value="beginner" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:c_proficiency, 'Proficient') %>
+	<!-- <input name="javaInput" value="proficient" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:c_proficiency, 'Advanced') %>
+	<!-- <input name="javaInput" value="advanced" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c_wttl, 'willing to ta lang') %>
+	<!-- <input name="javaInput" value="willingToLangTA" type="checkbox"> -->
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">C++</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:cpp_proficiency, 'No Experience') %>
+	<!-- <input name="javaInput" value="noExperience" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:cpp_proficiency, 'Beginner') %>
+	<!-- <input name="javaInput" value="beginner" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:cpp_proficiency, 'Proficient') %>
+	<!-- <input name="javaInput" value="proficient" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:cpp_proficiency, 'Advanced') %>
+	<!-- <input name="javaInput" value="advanced" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:cpp_wttl, 'willing to ta lang') %>
+	<!-- <input name="javaInput" value="willingToLangTA" type="checkbox"> -->
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Objective-C</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:objective_c_proficiency, 'No Experience') %>
+	<!-- <input name="javaInput" value="noExperience" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:objective_c_proficiency, 'Beginner') %>
+	<!-- <input name="javaInput" value="beginner" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:objective_c_proficiency, 'Proficient') %>
+	<!-- <input name="javaInput" value="proficient" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:objective_c_proficiency, 'Advanced') %>
+	<!-- <input name="javaInput" value="advanced" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:objective_c_wttl, 'willing to ta lang') %>
+	<!-- <input name="javaInput" value="willingToLangTA" type="checkbox"> -->
+</td>
+</tr>
+
+
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Ruby</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:ruby_proficiency, 'No Experience') %>
+	<!-- <input name="javaInput" value="noExperience" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:ruby_proficiency, 'Beginner') %>
+	<!-- <input name="javaInput" value="beginner" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:ruby_proficiency, 'Proficient') %>
+	<!-- <input name="javaInput" value="proficient" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:ruby_proficiency, 'Advanced') %>
+	<!-- <input name="javaInput" value="advanced" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:ruby_wttl, 'willing to ta lang') %>
+	<!-- <input name="javaInput" value="willingToLangTA" type="checkbox"> -->
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Other</span><br>
+<%= text_field_tag(:other)%>
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:other_proficiency, 'No Experience') %>
+	<!-- <input name="javaInput" value="noExperience" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:other_proficiency, 'Beginner') %>
+	<!-- <input name="javaInput" value="beginner" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:other_proficiency, 'Proficient') %>
+	<!-- <input name="javaInput" value="proficient" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= radio_button_tag(:other_proficiency, 'Advanced') %>
+	<!-- <input name="javaInput" value="advanced" type="checkbox"> -->
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:other_wttl, 'willing to ta lang') %>
+	<!-- <input name="javaInput" value="willingToLangTA" type="checkbox"> -->
+</td>
+</tr>
+</tbody>
+</table>
+	
+<br>
+<br>	
+	
+<table style="text-align: left; width: 1000px; height: 3111px; background-color: rgb(255, 185, 104);"
+border="1" cellpadding="5" cellspacing="10">
+<tbody>
+<tr>
+<td style="vertical-align: center;"><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">I'm willing to TA for this course.</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">I'm willing to GRADE for this course.</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">I have been a TA for this course previously.</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">I have taken this course.</span><br>
+</td>
+<td style="vertical-align: center;"><span style="font-weight: bold;">Instructor</span><br>
+</td>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Grade Recieved</span><br>
+</td>
+
+<tr>
+<td style="vertical-align: center;"><span style="font-weight: bold;">Intro (1101)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c1101_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c1101_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c1101_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c1101_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c1101_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c1101_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c1101_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c1101_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c1101_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c1101_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c1101_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c1101_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c1101_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c1101_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c1101_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c1101_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c1101_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c1101_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c1101_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c1101_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c1101_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c1101_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Data
+Structures (2101)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2101_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2101_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2101_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2101_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2101_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2101_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2101_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2101_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2101_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2101_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2101_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2101_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2101_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2101_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2101_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2101_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2101_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2101_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2101_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2101_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2101_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2101_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Algorithms
+(2200)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2200_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2200_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2200_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2200_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2200_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2200_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2200_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2200_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2200_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2200_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2200_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2200_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2200_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2200_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2200_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2200_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2200_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2200_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2200_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2200_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2200_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2200_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Theory
+of Computation (2210)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2210_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2210_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2210_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2210_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2210_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2210_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2210_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2210_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2210_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2210_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2210_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2210_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2210_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2210_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2210_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2210_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2210_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2210_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2210_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2210_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2210_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2210_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Computer
+Organization (2300)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2300_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2300_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2300_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2300_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2300_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2300_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2300_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2300_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2300_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2300_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2300_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2300_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2300_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2300_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2300_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2300_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2300_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2300_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2300_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2300_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2300_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2300_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Operating
+Systems (2310)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2310_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2310_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2310_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2310_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2310_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2310_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2310_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2310_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2310_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2310_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2310_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2310_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2310_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2310_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2310_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2310_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2310_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2310_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2310_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2310_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2310_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2310_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Programming
+Languages (2325)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2325_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2325_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2325_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2325_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2325_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2325_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2325_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2325_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2325_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2325_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2325_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2325_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2325_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2325_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2325_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2325_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2325_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2325_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2325_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2325_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2325_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2325_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Artificial
+Intelligence (2400)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2400_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2400_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2400_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2400_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2400_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2400_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2400_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2400_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2400_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2400_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2400_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2400_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2400_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2400_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2400_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2400_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2400_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2400_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2400_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2400_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2400_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2400_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Mobile
+Computing (2505)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2505_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2505_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2505_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c2505_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2505_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c2505_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c2505_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c2505_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c2505_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c2505_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c2505_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c2505_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c2505_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c2505_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c2505_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c2505_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c2505_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c2505_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c2505_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c2505_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c2505_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c2505_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Spatial
+Data Structures (3215)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3215_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3215_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3215_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3215_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3215_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3215_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3215_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3215_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3215_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3215_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3215_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3215_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3215_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3215_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3215_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3215_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3215_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3215_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3215_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3215_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3215_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3215_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">GIS
+Algorithms and Data
+Structures (3225)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3225_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3225_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3225_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3225_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3225_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3225_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3225_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3225_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3225_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3225_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3225_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3225_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3225_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3225_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3225_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3225_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3225_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3225_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3225_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3225_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3225_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3225_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">When
+RAM Is Not Enough (3235)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3235_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3235_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3235_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3235_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3235_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3235_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3235_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3235_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3235_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3235_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3235_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3235_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3235_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3235_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3235_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3235_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3235_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3235_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3235_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3235_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3235_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3235_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Computational
+Geometry (3250)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3250_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3250_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3250_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3250_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3250_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3250_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3250_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3250_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3250_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3250_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3250_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3250_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3250_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3250_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3250_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3250_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3250_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3250_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3250_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3250_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3250_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3250_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Computer
+Networks (3300)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3300_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3300_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3300_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3300_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3300_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3300_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3300_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3300_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3300_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3300_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3300_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3300_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3300_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3300_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3300_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3300_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3300_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3300_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3300_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3300_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3300_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3300_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Computer
+Security (3310)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3310_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3310_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3310_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3310_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3310_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3310_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3310_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3310_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3310_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3310_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3310_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3310_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3310_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3310_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3310_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3310_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3310_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3310_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3310_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3310_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3310_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3310_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Social
+and Economic Networks
+(3350)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3350_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3350_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3350_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3350_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3350_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3350_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3350_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3350_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3350_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3350_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3350_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3350_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3350_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3350_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3350_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3350_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3350_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3350_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3350_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3350_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3350_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3350_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Open
+Source Software Development
+(3355)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3355_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3355_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3355_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3355_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3355_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3355_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3355_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3355_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3355_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3355_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3355_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3355_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3355_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3355_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3355_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3355_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3355_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3355_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3355_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3355_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3355_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3355_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Cognitive
+Architecture (3400)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3400_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3400_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3400_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3400_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3400_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3400_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3400_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3400_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3400_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3400_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3400_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3400_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3400_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3400_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3400_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3400_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3400_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3400_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3400_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3400_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3400_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3400_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Robotics
+(3415)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3415_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3415_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3415_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3415_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3415_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3415_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3415_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3415_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3415_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3415_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3415_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3415_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3415_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3415_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3415_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3415_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3415_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3415_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3415_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3415_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3415_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3415_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Optimization
+and Uncertainty
+(3425)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3425_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3425_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3425_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3425_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3425_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3425_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3425_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3425_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3425_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3425_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3425_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3425_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3425_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3425_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3425_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3425_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3425_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3425_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3425_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3425_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3425_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3425_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Artificial
+Intelligence &amp;
+Computer Games (3435)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3435_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3435_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3435_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3435_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3435_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3435_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3435_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3435_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3435_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3435_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3435_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3435_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3435_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3435_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3435_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3435_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3435_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3435_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3435_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3435_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3435_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3435_grade, 'Credit') %>Credit
+</td>
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Nature
+Inspired Computation
+(3440)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3440_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3440_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3440_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c3440_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3440_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c3440_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c3440_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c3440_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c3440_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c3440_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c3440_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c3440_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c3440_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c3440_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c3440_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c3440_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c3440_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c3440_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c3440_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c3440_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c3440_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c3440_grade, 'Credit') %>Credit
+</td>
+
+</tr>
+<!-- --------------------------------------------------------------------------------------------------------------------- -->
+<tr>
+<td style="vertical-align: center;"><span
+style="font-weight: bold;">Independent
+Studies (4000)</span><br>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c4000_wtta, 'wtta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c4000_wtg, 'wtg') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c4000_pta, 'pta') %>
+</td>
+<td style="vertical-align: center;">
+	<%= check_box_tag(:c4000_taken, 'taken') %>
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c4000_instructor, 'Irfan') %>Irfan
+<br>
+<%= radio_button_tag(:c4000_instructor, 'Toma') %>Toma
+<br>
+<%= radio_button_tag(:c4000_instructor, 'Majercik') %>Majercik
+<br>
+<%= radio_button_tag(:c4000_instructor, 'Chown') %>Chown
+<br>
+<%= radio_button_tag(:c4000_instructor, 'Barker') %>Barker
+<br>
+<%= radio_button_tag(:c4000_instructor, 'Oliveira') %>Oliveira
+<br>
+<%= radio_button_tag(:c4000_instructor, 'Silver') %>Silver
+</td>
+
+<td style="vertical-align: center;">
+<%= radio_button_tag(:c4000_grade, 'A') %>A
+<br>
+<%= radio_button_tag(:c4000_grade, 'A-') %>A-
+<br>
+<%= radio_button_tag(:c4000_grade, 'B+') %>B+
+<br>
+<%= radio_button_tag(:c4000_grade, 'B') %>B
+<br>
+<%= radio_button_tag(:c4000_grade, 'B-') %>B-
+<br>
+<%= radio_button_tag(:c4000_grade, 'C+') %>C+
+<br>
+<%= radio_button_tag(:c4000_grade, 'C') %>C
+<br>
+<%= radio_button_tag(:c4000_grade, 'C-') %>C-
+<br>
+<%= radio_button_tag(:c4000_grade, 'D') %>D
+<br>
+<%= radio_button_tag(:c4000_grade, 'F') %>F
+<br>
+<%= radio_button_tag(:c4000_grade, 'Credit') %>Credit
+</td>
+</tr>
+</tbody>
+</table>
+	
+<p>Other information:</p>
+<%= text_area_tag :other_information %>
+<br>	
+
+<%= submit_tag 'Submit', data: { :confirm => 'Do you wish to submit your application now?'} %>
+<% end %>

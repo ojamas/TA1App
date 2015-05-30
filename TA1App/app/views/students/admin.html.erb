@@ -1,0 +1,155 @@
+<h1>Admin Page</h1>
+
+<table style="text-align: center; width: 1000px;" border="1" cellpadding="2" cellspacing="10">
+	<thead>
+		<tr>
+			<th>Course Name</th>
+			<th>Course ID</th>
+			<th>Students Willing to TA</th>
+			<th>Students Willing to Grade</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @courses.each do |c| %>
+	<tr>
+		<td><%= c.course_name %></td>
+		<td><%= c.course_id %></td>
+		<td>
+			<% @student.order(:student_name).each do |s| %>
+				<% @willing_to_ta.each do |wtta| %>
+					<% if (wtta.student_id_wtta == s.student_id)%>
+						<% if (wtta.course_id_wtta == c.course_id) %>
+							<b><%= s.student_name %></b>
+							<font color="gray">
+							<% @taken.each do |taken| %>
+								<% if (taken.course_id_taken == c.course_id && taken.student_id_taken == s.student_id)%>
+									<%= "(Took with " %><%= taken.instructor_taken %><%=" : "%><%= taken.grade_taken %><%=")"%>
+								<% end %>
+							<% end %>	
+							<% @past_ta.each do |pta| %>
+								<% if (pta.course_id_pta == c.course_id && pta.student_id_pta == s.student_id)%>
+									<%= "(Former TA)" %>
+								<% end %>
+							<% end %>
+							</font>
+							<br>
+						<% end %>
+						
+					<% end %>
+					
+				<% end %>
+			<% end %>
+		</td>
+		<td>
+			<% @willing_to_grade.each do |wtg| %>
+			<% if (wtg.course_id_wtg == c.course_id) %>
+				<% @student.each do |s| %>
+					<% if (wtg.student_id_wtg == s.student_id)%>
+						<b><%= s.student_name %></b>
+						<font color="gray">
+						<% @taken.each do |taken| %>
+							<% if (taken.course_id_taken == c.course_id && taken.student_id_taken == s.student_id)%>
+								<%= "(Took with " %><%= taken.instructor_taken %><%=" : "%><%= taken.grade_taken %><%=")"%>
+							<% end %>
+						<% end %>	
+						<% @past_ta.each do |pta| %>
+							<% if (pta.course_id_pta == c.course_id && pta.student_id_pta == s.student_id)%>
+								<%= "(Former TA)" %>
+							<% end %>
+						<% end %>
+						</font>
+						<br>
+					<% end %>
+				<% end %>
+				
+				<% end %>
+			<% end %>
+			
+		</td>
+	</tr>
+	
+	<% end %>
+	</tbody>
+</table>
+
+<table style="text-align: center; width: 1000px;" border="1" cellpadding="2" cellspacing="10">
+	<thead>
+		<tr>
+			<th>Student Name</th>
+			<th>Class Year</th>
+			<th>Languages</th>
+			<th>Willing to be a TA for a language?</th>
+			<th>Major</th>
+			<th>Minor</th>
+			<th>QR Certified</th>
+			<th>Max Hours</th>
+			<th>Other Info</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @student.order(:student_name).each do |s| %>
+	<tr>
+		<td><%= s.student_name %></td>
+		<td><% if !(s.class_year_st.blank?) %>
+				<%= s.class_year_st %>
+			<% else %>
+				<%= "-" %>
+			<% end %>	
+		</td>
+		<td>
+			<% @language_proficiency.each do |lp| %>
+				<% if lp.student_id_lp == s.student_id %>
+					<%= lp.language_lp %><%= " : " %><%= lp.proficiency_level_lp %>
+					<br>
+				<% end %>
+			<% end %>
+		</td>
+		<td>
+			<% @willing_to_ta_languages.each do |wttl| %>
+				<% if wttl.student_id_wttl == s.student_id %>
+					<%= "Yes, "%><%= wttl.language_wttl %>
+					<br>
+				<% end %>
+			<% end %>
+		</td>
+		<td><% if !(s.major.nil? || s.major.empty?) %>
+				<%= s.major %>
+			<% else %>
+				<%= "-" %>
+			<% end %>
+		</td>
+		<td><% if !(s.minor.nil? || s.minor.empty?) %>
+				<%= s.minor %>
+			<% else %>
+				<%= "-" %>
+			<% end %>
+		</td>
+		<td><% if !(s.qr_st.nil? || s.qr_st.empty?) %>
+				<%= s.qr_st %>
+			<% else %>
+				<%= "-" %>
+			<% end %>
+		</td>
+		<td><% if !(s.hours_st.blank?) %>
+				<%= s.hours_st %>
+			<% else %>
+				<%= "-" %>
+			<% end %>
+		</td>
+		<td><% if !(s.other_information.nil? || s.other_information.empty?) %>
+				<%= s.other_information %>
+			<% else %>
+				<%= "-" %>
+			<% end %>
+		</td>
+	</tr>
+	<br>
+	<% end %>
+	</tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<p>Press button to clear database tables. Seed tables are left intact.</p>
+<%= button_to 'Clear Tables', { :controller => "students", :action => "destroy"} %>
