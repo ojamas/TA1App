@@ -1,0 +1,15 @@
+== README
+
+TA1App -------- Adam Gordon & Orin James
+
+Rails Project for online application to the student TA or grader positions.
+- Home page is the actual application form. Upon completion, there is a confirmation page.
+- Admins have access to an admin page where all data is viewable and sorted conveniently.
+  To access this page, a username and password is required: (USERNAME: admin, PASSWORD: cs123).
+- Also available through the admin page is a button for deleting database contents. This button
+  requires authentication as well: (USERNAME: admin, PASSWORD: destroy).
+  
+* Ruby version: ruby 2.1.4
+
+* Database: sqlite3 (through rails gem)
+
